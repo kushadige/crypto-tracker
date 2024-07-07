@@ -1,8 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Crypto Live Tracker Documentation
+
+## Overview
+
+Crypto Live Tracker is a Next.js application designed to provide real-time tracking and analytics of cryptocurrency data. It leverages various technologies including React, TypeScript, Tailwind CSS, and Axios for fetching data from external APIs.
+
+## Built With
+
+[![Next.js][Next.js]][Next.js-url]
+[![Tailwind][Tailwind]][Tailwind-url]
+[![TypeScript][TypeScript]][TypeScript-url]
+[![npm][npm]][Npm-url]
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js installed on your machine.
+- A package manager such as npm, yarn, pnpm, or bun.
+
+### Installation
+
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install the dependencies by running one of the following commands based on your package manager:
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
+
+### Running the Development Server
+
+To start the development server, run:
 
 ```bash
 npm run dev
@@ -14,23 +48,139 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 with your browser to see the result. The page auto-updates as you edit the files.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+├── app
+│   ├── (routes)
+│   │   ├── (home)
+│   │   │   └── page.tsx
+│   │   ├── layout.tsx
+│   │   └── providers.tsx
+│   ├── favicon.ico
+│   ├── globals.css
+│   └── layout.tsx
+├── components
+│   ├── crypto-table
+│   │   ├── cells
+│   │   │   ├── change-cell.tsx
+│   │   │   ├── crypto-cell.tsx
+│   │   │   ├── price-cell.tsx
+│   │   │   └── sparkline-cell.tsx
+│   │   ├── columns
+│   │   │   └── table-columns.tsx
+│   │   ├── crypto-table.tsx
+│   │   └── index.ts
+│   └── ui
+│       ├── badge.tsx
+│       ├── button.tsx
+│       ├── command.tsx
+│       ├── container.tsx
+│       ├── data-table
+│       │   ├── data-table-faceted-filter.tsx
+│       │   ├── data-table-pagination.tsx
+│       │   ├── data-table.tsx
+│       │   └── index.ts
+│       ├── dialog.tsx
+│       ├── popover.tsx
+│       ├── select.tsx
+│       ├── separator.tsx
+│       ├── skeleton.tsx
+│       ├── sparkline.tsx
+│       └── table.tsx
+├── config
+│   └── index.ts
+├── hooks
+│   ├── useCryptoData.ts
+│   ├── useKlinesData.ts
+│   └── useTable.ts
+├── lib
+│   └── tw.ts
+├── services
+│   └── api.service.ts
+└── utils
+    ├── formatter.ts
+    └── types.ts
+```
 
-## Learn More
+- `src/`: Source code of the application.
+  - `app/`: Next.js pages and API routes.
+  - `components/`: Reusable React components.
+  - `config/`: Configuration files, including environment variables.
+  - `hooks/`: Custom React hooks, e.g., `useCryptoData.ts` for fetching cryptocurrency data.
+  - `lib/`: Library code and utilities.
+  - `services/`: Services for external API calls, e.g., `api.service.ts` for fetching data from Binance.
+  - `utils/`: Utility functions and types, including `types.ts` for type definitions.
+  - `types/`: TypeScript type definitions.
+- `next.config.mjs`: Next.js configuration file.
+- `tailwind.config.ts`: Tailwind CSS configuration.
+- `tsconfig.json`: TypeScript configuration.
 
-To learn more about Next.js, take a look at the following resources:
+## Configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Environment variables are defined in `.env.local` and referenced in `src/config/index.ts`. These include:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `NEXT_PUBLIC_BASE_API_URL`: Base URL for the API.
+- `NEXT_PUBLIC_BASE_WS_URL`: Base URL for WebSockets.
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Defined in `package.json`, these scripts are used for development and production:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `dev`: Start the development server.
+- `build`: Build the application for production.
+- `start`: Start the production server.
+- `lint`: Lint the codebase using ESLint.
+
+## Deployment
+
+The application is deployed to Vercel using the GitHub repository. Refer to the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more information.
+
+## Contributing
+
+1. Install `ESLint` and `Prettier` extensions in VS Code
+
+2. Create a new branch
+
+```
+git checkout -b new-feature
+```
+
+3. Make changes to the code, test your changes and commit your changes
+
+```
+git commit -m "new-feature"
+```
+
+4. Push your changes to the remote branch
+
+```
+git push -u origin new-feature
+```
+
+5. Create a pull request on GitHub.
+
+## Dependencies
+
+- [next.js](https://www.npmjs.com/package/next)
+- [typescript](https://www.npmjs.com/package/typescript)
+- [shadcn-ui](https://www.npmjs.com/package/shadcn-ui)
+- [tailwindcss](https://www.npmjs.com/package/tailwindcss)
+- [axios](https://www.npmjs.com/package/axios)
+- [react-query](https://www.npmjs.com/package/@tanstack/react-query)
+- [react-icons](https://www.npmjs.com/package/react-icons)
+
+## Contact
+
+- Oğuzhan Kuşlar - [@kushadige](https://github.com/kushadige) - oguzhankuslar@gmail.com
+
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next.js-url]: https://nextjs.org/docs
+[Npm]: https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white
+[Npm-url]: https://www.npmjs.com/
+[TypeScript]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
+[TypeScript-url]: https://www.typescriptlang.org/
+[Tailwind]: https://img.shields.io/badge/tailwindcss-0F172A?style=for-the-badge&logo=tailwindcss&logoColor=white
+[Tailwind-url]: https://tailwindcss.com/
