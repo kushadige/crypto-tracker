@@ -1,4 +1,8 @@
 export const formatPrice = (price: string) => {
+  if (!price) {
+    return "-";
+  }
+
   const priceFloat = parseFloat(price);
 
   if (priceFloat < 1) {
