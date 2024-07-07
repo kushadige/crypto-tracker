@@ -42,6 +42,7 @@ export const useTable = <TData, TValue>(
     getFacetedRowModel: getFacetedRowModel(),
     getFacetedUniqueValues: getFacetedUniqueValues(),
     autoResetPageIndex: false,
+    meta: options.meta,
   });
 
   if (!options.disableFiltering) {
