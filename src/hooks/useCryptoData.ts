@@ -6,7 +6,7 @@ import { ApiService } from "@/services/api.service";
 
 import { type CryptoTableData } from "@/utils/types";
 
-const INTERVAL_MS = 10000; // 10 seconds
+const INTERVAL_MS = 5000; // 5 seconds
 
 export const useCryptoData = () => {
   const queries = useQueries({
