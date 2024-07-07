@@ -169,8 +169,13 @@ git push -u origin new-feature
 - [shadcn-ui](https://www.npmjs.com/package/shadcn-ui)
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss)
 - [axios](https://www.npmjs.com/package/axios)
-- [react-query](https://www.npmjs.com/package/@tanstack/react-query)
+- [@tanstack/react-query](https://www.npmjs.com/package/@tanstack/react-query)
+- [@tanstack/react-table](https://www.npmjs.com/package/@tanstack/react-table)
 - [react-icons](https://www.npmjs.com/package/react-icons)
+- [jest](https://www.npmjs.com/package/jest)
+- [testing-library](https://www.npmjs.com/package/@testing-library/react)
+- [ts-jest](https://www.npmjs.com/package/ts-jest)
+- [ts-node](https://www.npmjs.com/package/ts-node)
 
 ## Contact
 
