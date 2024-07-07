@@ -10,7 +10,7 @@ export default function ProtectedLayout({ children }: ProtectedLayoutProps) {
   return (
     <Providers>
       <div className="grid min-h-screen grid-rows-[auto_1fr]">
-        <header className="flex items-center justify-between py-4 px-24 bg-slate-900 text-white">
+        <header className="flex items-center justify-between py-4 px-4 sm:px-12 lg:px-24 bg-slate-900 text-white">
           <div>Crypto Tracker</div>
           <nav>
             <ul className="flex space-x-4">
@@ -27,7 +27,7 @@ export default function ProtectedLayout({ children }: ProtectedLayoutProps) {
             </ul>
           </nav>
         </header>
-        <main>{children}</main>
+        <main className="grid">{children}</main>
       </div>
     </Providers>
   );

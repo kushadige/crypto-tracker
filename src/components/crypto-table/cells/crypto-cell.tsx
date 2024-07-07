@@ -10,7 +10,7 @@ interface CryptoCellProps {
 export const CryptoCell = ({ row }: CryptoCellProps) => {
   return (
     <div className="flex flex-nowrap gap-2 items-center">
-      <div className="relative h-8 w-8 overflow-hidden rounded">
+      <div className="relative h-8 w-8 overflow-hidden rounded shrink-0">
         <Image
           fill
           src={row.original.crypto.icon}
@@ -20,7 +20,7 @@ export const CryptoCell = ({ row }: CryptoCellProps) => {
         />
       </div>
       <div>
-        <div>
+        <div className="whitespace-nowrap">
           <span className="font-bold">{row.original.crypto.baseAsset}</span>
           <span className=" text-gray-400"> / {row.original.crypto.quoteAsset}</span>
         </div>

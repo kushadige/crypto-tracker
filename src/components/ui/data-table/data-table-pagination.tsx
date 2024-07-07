@@ -18,12 +18,12 @@ interface DataTablePaginationProps<TData> {
 
 export const DataTablePagination = <TData,>({ table }: DataTablePaginationProps<TData>) => {
   return (
-    <div className="flex items-center justify-between bg-neutral3 p-4 border rounded-md mt-4">
-      <div className="text-sm font-medium min-w-[7rem]">
+    <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:justify-between bg-neutral3 p-4 border rounded-md mt-4">
+      <div className="text-sm font-medium min-w-[6rem] text-center sm:text-left">
         Page {table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
       </div>
 
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center gap-x-2">
         <Button
           variant="outline"
           className="hidden h-7 w-7 p-0 lg:flex"
